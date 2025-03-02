@@ -32,7 +32,6 @@ export const Projects = () => {
 
 const StyledProjects = styled.section`
     min-height: 100vh;
-    background-color: #ffd9e8;
     width: 100%;
 
 `
