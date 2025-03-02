@@ -32,8 +32,14 @@ export const GlobalStyle = createGlobalStyle`
         background-color: unset;
         border: unset;
     }
+
     section {
         background-color: ${theme.colors.primaryBg};
+        padding: 140px 0;
     }
-    
+
+    div {
+        background-color: ${theme.colors.primaryBg};
+    }
+
 `

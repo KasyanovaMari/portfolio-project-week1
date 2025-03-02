@@ -3,12 +3,13 @@ import photo from '../../../assets/images/photo.webp';
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {Container} from "../../../components/Container.ts";
+import {theme} from "../../../styles/Theme.ts";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={'center'} justify={'space-between'}>
+                <FlexWrapper align={'center'} justify={'space-between'} wrap={'nowrap'}>
                     <LeftSideWrapper>
                         <MainTitle>DEVELOPER</MainTitle>
                         <Name>Maria Kasyanova</Name>
@@ -18,7 +19,7 @@ export const Main = () => {
                         <StyledContactMe>Contact me</StyledContactMe>
                     </LeftSideWrapper>
                     <RightSideWrapper>
-                    <Photo src={photo} alt='Maria'/>
+                        <Photo src={photo} alt='Maria'/>
                     </RightSideWrapper>
                 </FlexWrapper>
                 <LinkDown href="#about-me">
@@ -49,20 +50,19 @@ const LeftSideWrapper = styled.div`
     align-items: flex-start;
     text-align: left;
     max-width: 60%;
-    border: 1px solid red;
+    outline: 1px solid red;
+
 `;
 
 const RightSideWrapper = styled.div`
     display: flex;
     max-width: 40%;
-    
-    border: 1px solid blue;
-    
+    outline: 1px solid blue;
 `;
 
 const Photo = styled.img`
     width: 280px;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 `;
 
@@ -76,7 +76,7 @@ const MainTitle = styled.h1`
 const Name = styled.h2`
     font-weight: 600;
     font-size: 72px;
-    color: #B371B9;
+    color: ${theme.colors.accent};
     margin: 10px 0;
 `;
 
@@ -118,7 +118,7 @@ const StyledShortInfo = styled.p`
         top: 0;
         bottom: 0;
         width: 5px;
-        background-color: #B371B9;
+        background-color: ${theme.colors.accent};
         border-radius: 2px;
 
     }

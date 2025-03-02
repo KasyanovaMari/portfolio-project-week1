@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {theme} from "../../../../styles/Theme.ts";
 
 type ProjectPropTypes = {
     title: string,
@@ -19,7 +20,7 @@ export const Project = (props: ProjectPropTypes) => {
 
 
 const StyledProject = styled.div`
-    background-color: blanchedalmond;
+    background-color: ${theme.colors.secondaryBg};
     max-width: 522px;
     width: 100%;
     margin: 20px;
