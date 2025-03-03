@@ -46,16 +46,13 @@ const StyledFooter = styled.footer`
 const SocialList = styled.ul`
     display: flex;
     gap: 73px;
-
-
 `
 
 const SocialItem = styled.li`
 
 `
 const SocialLink = styled.a`
-
-
+    
 `
 
 const FooterLinkWrapper = styled.div`
@@ -70,7 +67,6 @@ const ContactLinkItem = styled.li`
 
 `
 const MyPageLink = styled.a`
-
 `
 
 const FooterMyInfo = styled.span`

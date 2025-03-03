@@ -1,26 +1,24 @@
 import styled from "styled-components";
 import photo from '../../../assets/images/photo.webp';
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
+import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={'center'} justify={'space-between'} wrap={'nowrap'}>
+                <FlexWrapper align={'center'} justify={'space-around'}>
                     <LeftSideWrapper>
-                        <MainTitle>DEVELOPER</MainTitle>
+                        <MainTitle>Developer</MainTitle>
                         <Name>Maria Kasyanova</Name>
                         <LeftText>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
                             officia consequat
                             duis enim velit mollit. Exercitation veniam consequat sunt.</LeftText>
                         <StyledContactMe>Contact me</StyledContactMe>
                     </LeftSideWrapper>
-                    <RightSideWrapper>
-                        <Photo src={photo} alt='Maria'/>
-                    </RightSideWrapper>
+                    <Photo src={photo} alt='Maria'/>
                 </FlexWrapper>
                 <LinkDown href="#about-me">
                     <Icon iconId="scroll" width="50" height="50"/>
@@ -48,20 +46,13 @@ const LeftSideWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
     max-width: 60%;
     outline: 1px solid red;
 
 `;
 
-const RightSideWrapper = styled.div`
-    display: flex;
-    max-width: 40%;
-    outline: 1px solid blue;
-`;
-
 const Photo = styled.img`
-    width: 280px;
+    max-width: 280px;
     height: auto;
     object-fit: cover;
 `;
@@ -81,10 +72,8 @@ const Name = styled.h2`
 `;
 
 const LeftText = styled.p`
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
     max-width: 500px;
+    text-align: left;
 `
 
 const StyledContactMe = styled.button`
@@ -98,18 +87,13 @@ const LinkDown = styled.a`
 `;
 
 const StyledAboutMe = styled.h3`
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.08333;
-    letter-spacing: 0.04em;
-    color: #151717;
-    margin-bottom: 20px;
 `;
 
 const StyledShortInfo = styled.p`
     position: relative;
-    max-width: 800px;
+    max-width: 843px;
     padding-left: 17px;
+    font-size: 18px;
 
     &::before {
         content: '';

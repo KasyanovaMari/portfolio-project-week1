@@ -37,9 +37,21 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${theme.colors.primaryBg};
         padding: 140px 0;
     }
-
-    div {
-        background-color: ${theme.colors.primaryBg};
+        
+    h3 {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 1.08333;
+        letter-spacing: 0.04em;
+        color: ${theme.colors.font};
+        padding-bottom: 20px;
     }
 
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+        color: ${theme.colors.font};
+    }
 `
