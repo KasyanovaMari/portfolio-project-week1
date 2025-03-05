@@ -9,21 +9,21 @@ export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={'center'} justify={'space-around'}>
+                <FlexWrapper align={'center'} justify={'space-between'}>
                     <LeftSideWrapper>
                         <MainTitle>Developer</MainTitle>
                         <Name>Maria Kasyanova</Name>
                         <LeftText>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit
                             officia consequat
                             duis enim velit mollit. Exercitation veniam consequat sunt.</LeftText>
-                        <StyledContactMe>Contact me</StyledContactMe>
+                        <StyledButton>Contact me</StyledButton>
                     </LeftSideWrapper>
                     <Photo src={photo} alt='Maria'/>
                 </FlexWrapper>
-                <LinkDown href="#about-me">
+                <LinkDown href="#ancor">
                     <Icon iconId="scroll" width="50" height="50"/>
                 </LinkDown>
-                <StyledAboutMe id="about-me">About Me</StyledAboutMe>
+                <StyledAboutMe>About Me</StyledAboutMe>
                 <StyledShortInfo>The long barrow was built on land previously inhabited in the Mesolithic period. It
                     consisted of a
                     sub-rectangular earthen tumulus, estimated to have been 15 metres (50 feet) in length, with a
@@ -62,6 +62,7 @@ const MainTitle = styled.h1`
     font-weight: 400;
     color: #151717;
     font-family: 'Tinos regular', serif;
+    text-transform: uppercase;
 `;
 
 const Name = styled.h2`
@@ -76,7 +77,20 @@ const LeftText = styled.p`
     text-align: left;
 `
 
-const StyledContactMe = styled.button`
+const StyledButton = styled.button`
+    display: block;
+    background-color: ${theme.colors.accent};
+    color: white;
+    border-radius: 6px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    width: 134px;
+    height: 45px;
+    margin-top: 29px;
+
+    &:hover {
+        background-color: #9a5a9f;
+    }
 `;
 
 const LinkDown = styled.a`

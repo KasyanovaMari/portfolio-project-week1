@@ -22,6 +22,11 @@ export const GlobalStyle = createGlobalStyle`
 
     a {
         text-decoration: none;
+        cursor: pointer;
+    }
+
+    button {
+        cursor: pointer;
     }
 
     ul {
@@ -37,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${theme.colors.primaryBg};
         padding: 140px 0;
     }
-        
+
     h3 {
         font-weight: 600;
         font-size: 24px;

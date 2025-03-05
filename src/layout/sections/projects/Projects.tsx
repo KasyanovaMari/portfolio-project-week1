@@ -1,20 +1,20 @@
 import styled from "styled-components";
-import { SectionTitle } from "../../../components/SectionTitle.tsx";
-import { FlexWrapper } from "../../../components/FlexWrapper.tsx";
-import { Project } from "./project/Project.tsx";
+import {SectionTitle} from "../../../components/SectionTitle.tsx";
+import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
+import {Project} from "./project/Project.tsx";
 import socialImg from "./../../../assets/images/project-image.webp";
-import { theme } from "../../../styles/Theme.ts";
-import { Container } from "../../../components/Container.ts";
+import {theme} from "../../../styles/Theme.ts";
+import {Container} from "../../../components/Container.ts";
 
 export const Projects = () => {
     const skills1 = ["JavaScript", "React", "TypeScript"];
-    const skills2 = ["React Native","JavaScript"];
+    const skills2 = ["React Native", "JavaScript"];
 
     return (
-        <StyledProjects>
+        <StyledProjects  id="ancor">
             <Container>
                 <SectionTitle>Projects</SectionTitle>
-                <FlexWrapper justify={"space-between"}>
+                <FlexWrapper justify={"center"} gap={"27px"}>
                     <Project
                         title={"TITLE PROJECT"}
                         src={socialImg}
@@ -45,13 +45,13 @@ const SeeAllButton = styled.button`
     margin: 40px auto;
     background-color: ${theme.colors.accent};
     color: white;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 6px;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     text-transform: uppercase;
     width: 305px;
     height: 56px;
+
 
     &:hover {
         background-color: #9a5a9f;
