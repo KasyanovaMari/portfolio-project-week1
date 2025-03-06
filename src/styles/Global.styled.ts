@@ -18,14 +18,11 @@ export const GlobalStyle = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         color: ${theme.colors.font};
         line-height: 1.2;
+        background-color: ${theme.colors.primaryBg};
     }
 
     a {
         text-decoration: none;
-        cursor: pointer;
-    }
-
-    button {
         cursor: pointer;
     }
 
@@ -36,10 +33,11 @@ export const GlobalStyle = createGlobalStyle`
     button {
         background-color: unset;
         border: unset;
+        cursor: pointer;
     }
 
     section {
-        background-color: ${theme.colors.primaryBg};
+
         padding: 140px 0;
     }
 

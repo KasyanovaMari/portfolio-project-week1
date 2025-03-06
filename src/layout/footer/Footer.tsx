@@ -57,8 +57,9 @@ const SocialList = styled.ul`
 
 const SocialItem = styled.li`
     &:nth-child(1) {
-        transform: translateY(2px); 
+        transform: translateY(2px);
     }
+
     &:nth-child(2) {
         transform: translateY(1px);
 `
@@ -86,7 +87,7 @@ const ContactLinkItem = styled.li`
 `
 const MyPageLink = styled.a`
     &:hover {
-        color: ${theme.colors.accent}; /* Цвет при наведении */
+        color: ${theme.colors.accent};
     }
 `
 

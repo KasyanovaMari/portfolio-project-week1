@@ -21,7 +21,7 @@ export const Main = () => {
                     <Photo src={photo} alt='Maria'/>
                 </FlexWrapper>
                 <LinkDown href="#ancor">
-                    <Icon iconId="scroll" width="50" height="50"/>
+                    <Icon iconId="scroll" width="32" height="32" viewBox='0 0 32 32'/>
                 </LinkDown>
                 <StyledAboutMe>About Me</StyledAboutMe>
                 <StyledShortInfo>The long barrow was built on land previously inhabited in the Mesolithic period. It
@@ -48,7 +48,6 @@ const LeftSideWrapper = styled.div`
     align-items: flex-start;
     max-width: 60%;
     outline: 1px solid red;
-
 `;
 
 const Photo = styled.img`

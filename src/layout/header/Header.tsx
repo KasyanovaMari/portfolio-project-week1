@@ -3,6 +3,7 @@ import {Menu} from "../../components/menu/Menu.tsx";
 import {Container} from "../../components/Container.ts";
 import {FlexWrapper} from "../../components/FlexWrapper.tsx";
 
+
 const items = ["Home", "Projects", "Skills", "Contacts"]
 
 export const Header = () => {
@@ -18,4 +19,5 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
+;
 `

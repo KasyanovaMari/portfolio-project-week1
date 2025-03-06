@@ -11,7 +11,7 @@ export const Projects = () => {
     const skills2 = ["React Native", "JavaScript"];
 
     return (
-        <StyledProjects  id="ancor">
+        <StyledProjects id="ancor">
             <Container>
                 <SectionTitle>Projects</SectionTitle>
                 <FlexWrapper justify={"center"} gap={"27px"}>
