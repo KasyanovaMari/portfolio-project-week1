@@ -1,22 +1,22 @@
 import styled from "styled-components";
-import { theme } from "../../../../styles/Theme.ts";
-import { UsedSkills } from "../usedSkills/UsedSkills.tsx";
+import {theme} from "../../../../styles/Theme.ts";
+import {UsedSkills} from "../usedSkills/UsedSkills.tsx";
 
 type ProjectPropTypes = {
     title: string;
     text: string;
     src: string;
-    skills: string[]; // Добавляем массив навыков
+    skills: string[];
 };
 
 export const Project = (props: ProjectPropTypes) => {
     return (
         <StyledProject>
-            <Image src={props.src} alt="" />
+            <Image src={props.src} alt=""/>
             <Description>
-            <Title>{props.title}</Title>
-            <UsedSkills skillsItems={props.skills} />
-            <Text>{props.text}</Text>
+                <Title>{props.title}</Title>
+                <UsedSkills skillsItems={props.skills}/>
+                <Text>{props.text}</Text>
             </Description>
         </StyledProject>
     );
@@ -48,5 +48,5 @@ const Text = styled.p`
 `;
 
 const Description = styled.h3`
-    padding-left: 20px;    
+    padding-left: 20px;
 `

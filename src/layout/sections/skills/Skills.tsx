@@ -3,13 +3,14 @@ import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
 import {Skill} from "./Skill.tsx";
 import {Container} from "../../../components/Container.ts";
+import {theme} from "../../../styles/Theme.ts";
 
 export const Skills = () => {
     return (
         <StyledSkills>
             <Container>
                 <SectionTitle>Skills</SectionTitle>
-                <FlexWrapper wrap={'wrap'} justify={'space-between'} gap={'150px'} align={'flex-start'}>
+                <FlexWrapper wrap={'wrap'} justify={'space-between'} gap={'150px'} align={'space-around'}>
                     <Skill iconId={'html'} title={'HTML5'}/>
                     <Skill iconId={'css'} title={'CSS3'}/>
                     <Skill iconId={'react'} title={'React'}/>
@@ -25,4 +26,9 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
+    ${FlexWrapper} {
+        @media ${theme.media.mobile} {
+            gap: 30px; 
+        }
+    }
 `;

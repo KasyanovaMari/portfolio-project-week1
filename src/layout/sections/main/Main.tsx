@@ -4,12 +4,13 @@ import {Icon} from "../../../components/icon/Icon.tsx";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
 import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
+import {font} from "../../../styles/Common.ts";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={'center'} justify={'space-between'}>
+                <FlexWrapper align={'center'} justify={'space-between'} wrap={'wrap'}>
                     <LeftSideWrapper>
                         <MainTitle>Developer</MainTitle>
                         <Name>Maria Kasyanova</Name>
@@ -18,7 +19,9 @@ export const Main = () => {
                             duis enim velit mollit. Exercitation veniam consequat sunt.</LeftText>
                         <StyledButton>Contact me</StyledButton>
                     </LeftSideWrapper>
+                    <RightSideWrapper>
                     <Photo src={photo} alt='Maria'/>
+                        </RightSideWrapper>
                 </FlexWrapper>
                 <LinkDown href="#ancor">
                     <Icon iconId="scroll" width="32" height="32" viewBox='0 0 32 32'/>
@@ -38,8 +41,15 @@ export const Main = () => {
 };
 
 const StyledMain = styled.div`
-    min-height: 100vh;
     margin-top: 140px;
+
+    ${FlexWrapper} {
+        @media ${theme.media.mobile} {
+            width: 100%;
+            flex-direction: column-reverse;
+            gap: 62px;
+            margin-top: 29px;
+        }
 `;
 
 const LeftSideWrapper = styled.div`
@@ -48,7 +58,19 @@ const LeftSideWrapper = styled.div`
     align-items: flex-start;
     max-width: 60%;
     outline: 1px solid red;
+
+
+    @media${theme.media.mobile}{
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
 `;
+
+const RightSideWrapper= styled.div`
+    display: flex;
+
+`
 
 const Photo = styled.img`
     max-width: 280px;
@@ -57,23 +79,26 @@ const Photo = styled.img`
 `;
 
 const MainTitle = styled.h1`
-    font-size: 20px;
-    font-weight: 400;
+    ${font({family: "'Tinos regular', serif", weight: 400, Fmax: 20, Fmin: 16})}
     color: #151717;
-    font-family: 'Tinos regular', serif;
     text-transform: uppercase;
 `;
 
 const Name = styled.h2`
-    font-weight: 600;
-    font-size: 72px;
+    ${font({weight: 600, Fmax:72, Fmin:40})}
     color: ${theme.colors.accent};
     margin: 10px 0;
+    white-space: nowrap;
+
 `;
 
 const LeftText = styled.p`
     max-width: 500px;
     text-align: left;
+    
+    @media${theme.media.mobile}{
+        text-align: center;
+    }
 `
 
 const StyledButton = styled.button`
@@ -95,7 +120,7 @@ const StyledButton = styled.button`
 const LinkDown = styled.a`
     display: flex;
     justify-content: center;
-    margin: 100px 0;
+    margin: 105px 0 140px 0;
     text-decoration: none;
 `;
 

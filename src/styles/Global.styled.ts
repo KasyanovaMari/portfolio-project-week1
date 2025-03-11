@@ -21,9 +21,21 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${theme.colors.primaryBg};
     }
 
+    header {
+        color: ${theme.colors.font};
+        text-decoration: none;
+    }
+    
     a {
         text-decoration: none;
         cursor: pointer;
+        color: ${theme.colors.font};
+        &:visited {
+            color: inherit;
+        }
+        &:hover {
+            color: ${theme.colors.accent};
+        }
     }
 
     ul {
@@ -37,8 +49,12 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     section {
-
-        padding: 140px 0;
+        padding-bottom: 0;
+        margin-top: 140px;
+        
+        @media${theme.media.mobile} {
+            margin-top: 100px;
+        }
     }
 
     h3 {
@@ -56,5 +72,9 @@ export const GlobalStyle = createGlobalStyle`
         line-height: 1.5;
         letter-spacing: 0.04em;
         color: ${theme.colors.font};
+    }
+    
+    footer {
+        
     }
 `

@@ -14,7 +14,7 @@ export const Projects = () => {
         <StyledProjects id="ancor">
             <Container>
                 <SectionTitle>Projects</SectionTitle>
-                <FlexWrapper justify={"center"} gap={"27px"}>
+                <FlexWrapper justify={"center"} gap={"27px"} wrap={'wrap'}>
                     <Project
                         title={"TITLE PROJECT"}
                         src={socialImg}
@@ -38,7 +38,9 @@ export const Projects = () => {
     );
 };
 
-const StyledProjects = styled.section``;
+const StyledProjects = styled.section`
+
+`;
 
 const SeeAllButton = styled.button`
     display: block;

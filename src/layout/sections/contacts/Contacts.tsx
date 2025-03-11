@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { SectionTitle } from "../../../components/SectionTitle.tsx";
-import { Button } from "../../../components/Button.tsx";
-import { Container } from "../../../components/Container.ts";
+import {SectionTitle} from "../../../components/SectionTitle.tsx";
+import {Button} from "../../../components/Button.tsx";
+import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
 
 export const Contact = () => {
@@ -12,15 +12,15 @@ export const Contact = () => {
                 <StyledForm>
                     <Label>
                         Name
-                        <Field className="name-input" />
+                        <Field className="name-input"/>
                     </Label>
                     <Label>
                         Email
-                        <Field type={"email"} required className="email-input" />
+                        <Field type={"email"} required className="email-input"/>
                     </Label>
                     <Label>
                         Message
-                        <Field as={'textarea'} className="message-input" />
+                        <Field as={'textarea'} className="message-input"/>
                     </Label>
                     <SendButton type={'submit'}>Submit</SendButton>
                 </StyledForm>
@@ -86,6 +86,7 @@ const Label = styled.label`
     width: 100%;
     font-weight: 400;
     font-size: 14px;
+
     &:last-of-type {
         margin-bottom: 22px;
     }
@@ -95,7 +96,7 @@ const SendButton = styled(Button)`
     background-color: ${theme.colors.accent};
     border-radius: 6px;
     padding: 12px 20px;
-    width: 532px;
+    width: 100%;
     height: 48px;
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
@@ -105,4 +106,8 @@ const SendButton = styled(Button)`
         background-color: #9a5a9f;
     }
 
+
+    @media ${theme.media.mobile} {
+        width: 100%;
+    }
 `;

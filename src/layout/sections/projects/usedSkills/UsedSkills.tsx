@@ -17,7 +17,6 @@ export const UsedSkills = (props: UsedSkillsPropsType) => {
 
 const UsedSkillsDiv = styled.div`
 	display: flex;
-	flex-wrap: wrap;
 	gap: 11px;
 	padding-top: 11px;
 	padding-bottom: 19px;
