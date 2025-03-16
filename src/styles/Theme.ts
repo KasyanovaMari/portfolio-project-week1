@@ -1,9 +1,9 @@
 export const theme = {
     colors: {
         primaryBg: '#FAFAFA',
-        secondaryBg: '#fbecfb',
-        accent: '#B371B9',
-
+        secondaryBg: '#e9e0e9',
+        accent: '#8e6691',
+        buttonHover: '#7a517d',
         font: '#1F2626',
         headlineFont: '#151717'
     },

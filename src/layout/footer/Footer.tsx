@@ -1,102 +1,60 @@
-import styled from "styled-components";
 import {Icon} from "../../components/icon/Icon.tsx";
-import {FlexWrapper} from "../../components/FlexWrapper.tsx";
-import {theme} from "../../styles/Theme.ts";
+import {FlexWrapper} from "../../components/FlexWrapper.ts";
+import {S} from "./Footer_Styles";
+import * as React from "react";
 
-export const Footer = () => {
+const socialItemsData = [
+    {
+        iconId: 'gmail',
+        linkTitle: 'Gmail',
+    },
+    {
+        iconId: 'instagram',
+        linkTitle: 'Instagram',
+    },
+    {
+        iconId: 'telegram',
+        linkTitle: 'Telegram',
+    },
+]
+
+const socialLinksData = [
+    {
+        linkName: 'Projects',
+        linkHref: '#projects'
+    },
+    {
+        linkName: 'Contact',
+        linkHref: '#contact-form'
+    }
+]
+
+export const Footer:React.FC = () => {
     return (
-        <StyledFooter>
+        <S.Footer>
             <FlexWrapper direction={'column'} align={'center'}>
-                <SocialList>
-                    <SocialItem>
-                        <SocialLink>
-                            <Icon iconId={'gmail'} width='45' height='45' viewBox={"0 0 45 45"}/>
-                            gmail
-                        </SocialLink>
-                    </SocialItem>
-                    <SocialItem>
-                        <SocialLink>
-                            <Icon iconId={'instagram'} width='45' height='45' viewBox={"0 0 40 40"}/>
-                            instagram
-                        </SocialLink>
-                    </SocialItem>
-                    <SocialItem>
-                        <SocialLink>
-                            <Icon iconId={'telegram'} width='45' height='45' viewBox={"0 0 45 45"}/>
-                            telegram
-                        </SocialLink>
-                    </SocialItem>
-                </SocialList>
+                <S.SocialList>
+                    {socialItemsData.map((s, index) => {
+                        return (<S.SocialItem key={index}>
+                            <S.SocialLink>
+                                <Icon height='45' width='45' viewBox={"0 0 45 45"} iconId={s.iconId}/>
+                                <a>{s.linkTitle}</a>
+                            </S.SocialLink>
+                        </S.SocialItem>)
+                    })}
+                </S.SocialList>
             </FlexWrapper>
-            <FooterLinkWrapper>
-                <LinksList>
-                    <ContactLinkItem>
-                        <MyPageLink href="#">Projects</MyPageLink>
-                    </ContactLinkItem>
-                    <ContactLinkItem>
-                        <MyPageLink href="#">Contact</MyPageLink>
-                    </ContactLinkItem>
-                </LinksList>
-            </FooterLinkWrapper>
-            <FooterMyInfo>web developer 2025</FooterMyInfo>
-        </StyledFooter>
+            <S.FooterLinkWrapper>
+                <S.LinksList>
+                    {socialLinksData.map((l, index) => {
+                        return (<S.ContactLinkItem key={index}>
+                            <S.MyPageLink href={l.linkHref}>{l.linkName}</S.MyPageLink>
+                        </S.ContactLinkItem>)
+                    })}
+                </S.LinksList>
+            </S.FooterLinkWrapper>
+            <S.FooterMyInfo>web developer 2025</S.FooterMyInfo>
+        </S.Footer>
     );
 };
 
-const StyledFooter = styled.footer`
-    background-color: ${theme.colors.primaryBg};
-    padding-top: 190px;
-    padding-bottom: 100px;
-`
-const SocialList = styled.ul`
-    display: flex;
-    gap: 77px;
-
-    @media ${theme.media.mobile} {
-        gap: 30px;
-    }
-`
-
-const SocialItem = styled.li`
-    &:nth-child(1) {
-        transform: translateY(2px);
-    }
-    &:nth-child(2) {
-        transform: translateY(1px);
-`
-
-const SocialLink = styled.a`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-transform: uppercase;
-    transform: translateX(+25px);        
-`
-
-const FooterLinkWrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    margin: 49px 0;
-    
-    
-`
-const LinksList = styled.ul`
-    display: flex;
-    gap: 48px
-`
-const ContactLinkItem = styled.li`
-`
-const MyPageLink = styled.a`
-`
-
-const FooterMyInfo = styled.span`
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 14px;
-    text-transform: uppercase;
-    line-height: 1.85714;
-    letter-spacing: 0.04em;
-    color: ${theme.colors.font}
-
-`

@@ -1,0 +1,64 @@
+import styled from "styled-components";
+import {theme} from "../../styles/Theme.ts";
+
+const Footer = styled.footer`
+`;
+
+const SocialList = styled.ul`
+    display: flex;
+    gap: 70px;
+
+    @media ${theme.media.mobile} {
+        gap: 30px;
+    }
+`;
+
+const SocialItem = styled.li`
+`;
+
+const SocialLink = styled.a`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+`;
+
+const FooterLinkWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 49px 0;
+`;
+
+const LinksList = styled.ul`
+    display: flex;
+    gap: 48px;
+`;
+
+const ContactLinkItem = styled.li`
+`;
+
+const MyPageLink = styled.a`
+`;
+
+const FooterMyInfo = styled.small`
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 1.85714;
+    letter-spacing: 0.04em;
+    color: ${theme.colors.font};
+`;
+
+export const S = {
+    Footer,
+    SocialList,
+    SocialItem,
+    SocialLink,
+    FooterLinkWrapper,
+    LinksList,
+    ContactLinkItem,
+    MyPageLink,
+    FooterMyInfo
+};

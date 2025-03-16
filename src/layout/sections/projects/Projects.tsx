@@ -1,61 +1,46 @@
-import styled from "styled-components";
-import {SectionTitle} from "../../../components/SectionTitle.tsx";
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
-import {Project} from "./project/Project.tsx";
+import { SectionTitle } from "../../../components/SectionTitle.ts";
+import { FlexWrapper } from "../../../components/FlexWrapper.ts";
+import { Project } from "./project/Project.tsx";
 import socialImg from "./../../../assets/images/project-image.webp";
-import {theme} from "../../../styles/Theme.ts";
-import {Container} from "../../../components/Container.ts";
+import { Container } from "../../../components/Container.ts";
+import {S} from "./Projects_Styles.ts";
+import * as React from "react";
 
-export const Projects = () => {
-    const skills1 = ["JavaScript", "React", "TypeScript"];
-    const skills2 = ["React Native", "JavaScript"];
+const projectData = [
+    {
+        title: "title project",
+        src: socialImg,
+        text:
+            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    }, {
+        title: "insightgram",
+        src: socialImg,
+        text:
+            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
+    },
+];
 
+const skills1 = ["JavaScript", "React", "TypeScript"];
+const skills2 = ["React Native", "JavaScript"];
+
+export const Projects: React.FC = () => {
     return (
-        <StyledProjects id="ancor">
+        <S.Projects id="projects">
             <Container>
                 <SectionTitle>Projects</SectionTitle>
                 <FlexWrapper justify={"center"} gap={"27px"} wrap={'wrap'}>
-                    <Project
-                        title={"TITLE PROJECT"}
-                        src={socialImg}
-                        text={
-                            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-                        }
-                        skills={skills1}
-                    />
-                    <Project
-                        title={"I N S I G H T G R A M"}
-                        src={socialImg}
-                        text={
-                            "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
-                        }
-                        skills={skills2}
-                    />
+                    {projectData.map((p, index) => (
+                        <Project
+                            key={index}
+                            title={p.title}
+                            src={p.src}
+                            text={p.text}
+                            skills={index % 2 === 0 ? skills1 : skills2}
+                        />
+                    ))}
                 </FlexWrapper>
-                <SeeAllButton>See All Projects</SeeAllButton>
+                <S.SeeAllButton>See All Projects</S.SeeAllButton>
             </Container>
-        </StyledProjects>
+        </S.Projects>
     );
 };
-
-const StyledProjects = styled.section`
-
-`;
-
-const SeeAllButton = styled.button`
-    display: block;
-    margin: 40px auto;
-    background-color: ${theme.colors.accent};
-    color: white;
-    border-radius: 6px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-    width: 305px;
-    height: 56px;
-
-
-    &:hover {
-        background-color: #9a5a9f;
-    }
-`;

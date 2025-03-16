@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        scroll-behavior: smooth;
     }
 
     body {
@@ -25,17 +26,20 @@ export const GlobalStyle = createGlobalStyle`
         color: ${theme.colors.font};
         text-decoration: none;
     }
-    
+
     a {
         text-decoration: none;
         cursor: pointer;
         color: ${theme.colors.font};
+
         &:visited {
             color: inherit;
         }
+
         &:hover {
             color: ${theme.colors.accent};
         }
+
     }
 
     ul {
@@ -50,10 +54,10 @@ export const GlobalStyle = createGlobalStyle`
 
     section {
         padding-bottom: 0;
-        margin-top: 140px;
-        
-        @media${theme.media.mobile} {
-            margin-top: 100px;
+        padding-top: 140px;
+
+        @media ${theme.media.mobile}, ${theme.media.tablet} {
+            padding-top: 100px;
         }
     }
 
@@ -73,8 +77,14 @@ export const GlobalStyle = createGlobalStyle`
         letter-spacing: 0.04em;
         color: ${theme.colors.font};
     }
-    
+
     footer {
-        
+        background-color: ${theme.colors.primaryBg};
+        padding-top: 190px;
+        padding-bottom: 100px;
+
+        @media ${theme.media.mobile}, ${theme.media.tablet} {
+            padding-top: 150px;
+        }
     }
 `

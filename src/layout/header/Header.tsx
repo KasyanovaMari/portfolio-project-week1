@@ -1,37 +1,25 @@
-import styled from "styled-components";
-import {FlexWrapper} from "../../components/FlexWrapper.tsx";
-import {Menu} from "../../components/menu/Menu.tsx";
-import {Container} from "../../components/Container.ts";
-import {theme} from "../../styles/Theme.ts";
+import {FlexWrapper} from "../../components/FlexWrapper.ts";
+import {Container} from "../../components/Container";
+import * as React from "react";
+import {S} from "./Header_Styles";
 
-
-const leftItems = [{title: "Home", type: "link"}];
-const rightItems = [
-    {title: "Projects", type: "link"},
-    {title: "Skills", type: "link"},
-    {title: "Contact", type: "link", isButton: true},
-];
-
-export const Header = () => {
+export const Header: React.FC = () => {
     return (
-        <StyledHeader>
+        <S.Header>
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
-                    <Menu menuItems={leftItems}/>
-                    <Menu menuItems={rightItems}/>
+                    <S.LeftMenu>
+                        <S.NavLink href="/">Home</S.NavLink>
+                        <S.HiddenTitle></S.HiddenTitle>
+                    </S.LeftMenu>
+                    <S.RightMenu>
+                        <S.NavLink href="#projects">Projects</S.NavLink>
+                        <S.NavLink href="#skills">Skills</S.NavLink>
+                        <S.NavButton href="#contact-form">Contact</S.NavButton>
+                    </S.RightMenu>
                 </FlexWrapper>
             </Container>
-        </StyledHeader>
+        </S.Header>
     );
 };
 
-const StyledHeader = styled.header`
-    height: 100px;
-
-    ${FlexWrapper} {
-        @media ${theme.media.mobile} {
-            gap: 30px;
-        }
-    }
-    
-`

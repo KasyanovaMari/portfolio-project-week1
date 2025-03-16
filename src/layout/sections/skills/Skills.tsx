@@ -1,34 +1,50 @@
-import styled from "styled-components";
-import {FlexWrapper} from "../../../components/FlexWrapper.tsx";
-import {SectionTitle} from "../../../components/SectionTitle.tsx";
-import {Skill} from "./Skill.tsx";
-import {Container} from "../../../components/Container.ts";
-import {theme} from "../../../styles/Theme.ts";
+import {FlexWrapper} from "../../../components/FlexWrapper.ts";
+import {SectionTitle} from "../../../components/SectionTitle.ts";
+import {Skill} from "./Skill";
+import {Container} from "../../../components/Container";
+import {S} from "./Skills_Styles";
+
+const skillData = [
+    {
+        iconId: 'html',
+        title: 'HTML5',
+    }, {
+        iconId: 'css',
+        title: 'CSS3',
+    }, {
+        iconId: 'react',
+        title: 'React',
+    }, {
+        iconId: 'javascript',
+        title: 'Javascript',
+    }, {
+        iconId: 'figma',
+        title: 'Figma',
+    }, {
+        iconId: 'git',
+        title: 'Git',
+    }, {
+        iconId: 'typescript',
+        title: 'Typescript',
+    }, {
+        iconId: 'styled-components',
+        title: 'Styled components',
+    },
+]
 
 export const Skills = () => {
     return (
-        <StyledSkills>
+        <S.Skills id="skills">
             <Container>
                 <SectionTitle>Skills</SectionTitle>
-                <FlexWrapper wrap={'wrap'} justify={'space-between'} gap={'150px'} align={'space-around'}>
-                    <Skill iconId={'html'} title={'HTML5'}/>
-                    <Skill iconId={'css'} title={'CSS3'}/>
-                    <Skill iconId={'react'} title={'React'}/>
-                    <Skill iconId={'javascript'} title={'Javascript'}/>
-                    <Skill iconId={'figma'} title={'Figma'}/>
-                    <Skill iconId={'git'} title={'Git'}/>
-                    <Skill iconId={'typescript'} title={'Typescript'}/>
-                    <Skill iconId={'styled-components'} title={'Styled components'}/>
+                <FlexWrapper wrap={'wrap'} justify={'space-around'} gap={'160px'} align={'center'}>
+
+                    {skillData.map((s, index) => {
+                        return <Skill iconId={s.iconId} key={index}
+                                      title={s.title}/>
+                    })}
                 </FlexWrapper>
             </Container>
-        </StyledSkills>
+        </S.Skills>
     );
 };
-
-const StyledSkills = styled.section`
-    ${FlexWrapper} {
-        @media ${theme.media.mobile} {
-            gap: 30px; 
-        }
-    }
-`;

@@ -1,5 +1,5 @@
-import {Icon} from "../../../components/icon/Icon.tsx";
-import styled from "styled-components";
+import {Icon} from "../../../components/icon/Icon";
+import {S} from "./Skills_Styles"
 
 type SkillPropsType = {
     iconId: string,
@@ -8,26 +8,12 @@ type SkillPropsType = {
 
 export const Skill = (props: SkillPropsType) => {
     return (
-        <StyledSkill>
-            <Icon iconId={props.iconId}/>
-            <SkillTitle>{props.title}</SkillTitle>
-        </StyledSkill>
+        <S.Skill>
+            <S.IconWrapper>
+                <Icon iconId={props.iconId}/>
+            </S.IconWrapper>
+            <S.SkillTitle>{props.title}</S.SkillTitle>
+        </S.Skill>
     );
 };
 
-const StyledSkill = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 120px;
-    padding-top: 28px;
-`;
-
-const SkillTitle = styled.h3`
-    font-weight: 400;
-    font-size: 16px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    text-align: center;
-    margin-top: 20px;
-`;
