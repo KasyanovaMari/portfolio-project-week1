@@ -21,11 +21,11 @@ const socialItemsData = [
 const socialLinksData = [
     {
         linkName: 'Projects',
-        linkHref: '#projects'
+        linkHref: 'projects'
     },
     {
         linkName: 'Contact',
-        linkHref: '#contact-form'
+        linkHref: 'contact-form'
     }
 ]
 
@@ -48,7 +48,7 @@ export const Footer:React.FC = () => {
                 <S.LinksList>
                     {socialLinksData.map((l, index) => {
                         return (<S.ContactLinkItem key={index}>
-                            <S.MyPageLink href={l.linkHref}>{l.linkName}</S.MyPageLink>
+                            <S.MyPageLink to={l.linkHref} smooth={true}>{l.linkName}</S.MyPageLink>
                         </S.ContactLinkItem>)
                     })}
                 </S.LinksList>

@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import {theme} from "../../styles/Theme.ts";
+import {Link} from "react-scroll";
 
 const Footer = styled.footer`
+    position: relative;
+
 `;
 
 const SocialList = styled.ul`
@@ -16,7 +19,7 @@ const SocialList = styled.ul`
 const SocialItem = styled.li`
 `;
 
-const SocialLink = styled.a`
+const SocialLink = styled(Link)`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,7 +40,7 @@ const LinksList = styled.ul`
 const ContactLinkItem = styled.li`
 `;
 
-const MyPageLink = styled.a`
+const MyPageLink = styled(Link)`
 `;
 
 const FooterMyInfo = styled.small`

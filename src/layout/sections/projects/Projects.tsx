@@ -10,18 +10,18 @@ const projectData = [
     {
         title: "title project",
         src: socialImg,
+        skills: ["JavaScript", "React", "TypeScript"],
         text:
             "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
     }, {
         title: "insightgram",
         src: socialImg,
+        skills: ["React Native", "JavaScript"],
         text:
             "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet."
     },
 ];
 
-const skills1 = ["JavaScript", "React", "TypeScript"];
-const skills2 = ["React Native", "JavaScript"];
 
 export const Projects: React.FC = () => {
     return (
@@ -35,7 +35,7 @@ export const Projects: React.FC = () => {
                             title={p.title}
                             src={p.src}
                             text={p.text}
-                            skills={index % 2 === 0 ? skills1 : skills2}
+                            skills={p.skills}
                         />
                     ))}
                 </FlexWrapper>

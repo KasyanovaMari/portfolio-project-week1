@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
-import {Button} from "../../../components/Button.ts";
 
 const Projects = styled.section`
+    position: relative;
     @media ${theme.media.mobile} {
         display: flex;
         align-items: center;
@@ -64,7 +64,6 @@ const Text = styled.p`
 
 export const S = {
     Projects,
-    Button,
     SeeAllButton,
     Project,
     Image,

@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
-import {Button} from "../../../components/Button.ts";
 
 const Contacts = styled.section`
+    position: relative;
 `;
 
 const Form = styled.form`
     max-width: 532px;
     width: 100%;
-    display: flex;
     flex-direction: column;
     align-items: center;
     margin: 50px auto 0;
@@ -56,7 +55,7 @@ const Label = styled.label`
     }
 `;
 
-const SendButton = styled(Button)`
+const SendButton = styled.button`
     background-color: ${theme.colors.accent};
     border-radius: 6px;
     padding: 12px 20px;

@@ -3,6 +3,7 @@ import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {theme} from "../../../styles/Theme.ts";
 
 const Skills = styled.section`
+    position: relative;
     ${FlexWrapper} {
         @media ${theme.media.mobile}, ${theme.media.tablet} {
             row-gap: 80px;
