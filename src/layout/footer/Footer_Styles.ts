@@ -9,6 +9,7 @@ const Footer = styled.footer`
 const SocialList = styled.ul`
     display: flex;
     gap: 70px;
+    position: relative;
 
     @media ${theme.media.mobile} {
         gap: 30px;
@@ -34,6 +35,7 @@ const FooterLinkWrapper = styled.div`
 const LinksList = styled.ul`
     display: flex;
     gap: 48px;
+
 `;
 
 const ContactLinkItem = styled.li`
