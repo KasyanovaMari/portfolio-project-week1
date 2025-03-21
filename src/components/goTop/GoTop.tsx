@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Icon} from "../icon/Icon.tsx";
 import {useEffect, useState} from "react";
+import {theme} from "../../styles/Theme.ts";
 
 
 export const GoTop = () => {
@@ -27,8 +28,9 @@ export const GoTop = () => {
 };
 
 const StyledGoTopBtn = styled.button`
-    background-color: #a1a1a0;
+    background-color: ${theme.colors.accent};
     padding: 8px;
+    border-radius: 6px;
     position: fixed;
     right: 30px;
     bottom: 30px;

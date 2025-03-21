@@ -12,7 +12,7 @@ const Projects = styled.section`
 
 const SeeAllButton = styled.button`
     display: block;
-    margin: 40px auto;
+    margin: 40px auto 0;
     background-color: ${theme.colors.accent};
     color: white;
     border-radius: 6px;

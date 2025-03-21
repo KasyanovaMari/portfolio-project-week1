@@ -5,7 +5,7 @@ import {font} from "../../../styles/Common.ts";
 import {Link} from "react-scroll";
 
 const Main = styled.div`
-    margin-top: 140px;
+    padding-top: 140px;
     position: relative;
 
     ${FlexWrapper} {

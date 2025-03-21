@@ -7,10 +7,10 @@ export const Header: React.FC = () => {
     return (
         <S.Header>
             <Container>
+                <S.HiddenTitle>Hidden Info About Me</S.HiddenTitle>
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <S.LeftMenu>
                         <S.NavLink to="#" smooth={true}>Home</S.NavLink>
-                        <S.HiddenTitle></S.HiddenTitle>
                     </S.LeftMenu>
                     <S.RightMenu>
                         <S.NavLink to="projects" smooth={true}>Projects</S.NavLink>

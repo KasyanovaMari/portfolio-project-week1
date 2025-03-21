@@ -1,7 +1,7 @@
-import { useCallback } from "react";
-import type { Container, Engine } from "tsparticles-engine";
+import {useCallback} from "react";
+import type {Container, Engine} from "tsparticles-engine";
 import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
+import {loadSlim} from "tsparticles-slim";
 
 export const Particle = () => {
     const particlesInit = useCallback(async (engine: Engine) => {
@@ -13,74 +13,76 @@ export const Particle = () => {
         console.log(container);
     }, []);
     return (
-        <Particles
-            id="tsparticles"
-            init={particlesInit}
-            loaded={particlesLoaded}
-            options={{
-                fpsLimit: 120,
-                interactivity: {
-                    events: {
-                        onClick: {
-                            enable: true,
-                            mode: "push",
+        <div style={{position: "relative", zIndex: 0}}>
+            <Particles
+                id="tsparticles"
+                init={particlesInit}
+                loaded={particlesLoaded}
+                options={{
+                    fpsLimit: 120,
+                    interactivity: {
+                        events: {
+                            onClick: {
+                                enable: true,
+                                mode: "push",
+                            },
+                            onHover: {
+                                enable: false,
+                                mode: "repulse",
+                            },
+                            resize: true,
                         },
-                        onHover: {
-                            enable: false,
-                            mode: "repulse",
+                        modes: {
+                            push: {
+                                quantity: 4,
+                            },
+                            repulse: {
+                                distance: 200,
+                                duration: 0.4,
+                            },
                         },
-                        resize: true,
                     },
-                    modes: {
-                        push: {
-                            quantity: 4,
+                    particles: {
+                        color: {
+                            value: "#d8d8d8",
                         },
-                        repulse: {
+                        links: {
+                            color: "rgba(222,222,237,0.51)",
                             distance: 200,
-                            duration: 0.4,
-                        },
-                    },
-                },
-                particles: {
-                    color: {
-                        value: "#d8d8d8",
-                    },
-                    links: {
-                        color: "rgba(222,222,237,0.51)",
-                        distance: 200,
-                        enable: true,
-                        opacity: 0.5,
-                        width: 1,
-                    },
-                    move: {
-                        direction: "none",
-                        enable: true,
-                        outModes: {
-                            default: "bounce",
-                        },
-                        random: false,
-                        speed: 2,
-                        straight: false,
-                    },
-                    number: {
-                        density: {
                             enable: true,
-                            area: 1000,
+                            opacity: 0.5,
+                            width: 1,
                         },
-                        value: 50,
+                        move: {
+                            direction: "none",
+                            enable: true,
+                            outModes: {
+                                default: "bounce",
+                            },
+                            random: false,
+                            speed: 2,
+                            straight: false,
+                        },
+                        number: {
+                            density: {
+                                enable: true,
+                                area: 1000,
+                            },
+                            value: 50,
+                        },
+                        opacity: {
+                            value: 0.5,
+                        },
+                        shape: {
+                            type: "circle",
+                        },
+                        size: {
+                            value: {min: 0.2, max: 1},
+                        },
                     },
-                    opacity: {
-                        value: 0.5,
-                    },
-                    shape: {
-                        type: "circle",
-                    },
-                    size: {
-                        value: { min: 0.2, max: 1 },
-                    },
-                },
-                detectRetina: true,
-            }}
-        />
+                    detectRetina: true,
+                }}
+            />
+        </div>
     );
 };

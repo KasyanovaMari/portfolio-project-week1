@@ -3,8 +3,7 @@ import {theme} from "../../styles/Theme.ts";
 import {Link} from "react-scroll";
 
 const Footer = styled.footer`
-    position: relative;
-
+    
 `;
 
 const SocialList = styled.ul`
